@@ -1,0 +1,319 @@
+<Interface>:
+    canvas.before:
+		Color:
+			rgba: (25/255, 36/255, 68/255, 1)
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+    orientation: "vertical"
+
+
+
+    #padding: [dp(1), dp(1), dp(1), dp(1)]
+    spacing: dp(2)
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 1, 0.13
+        padding: [10,10,10,10]
+        Image:
+            source: 'logo.png'  # Reemplaza con la ruta de tu logo
+            #size_hint: 0.5, 0.15
+            #size: dp(60), dp(60)  # Ajusta el tamaño de tu logo
+            #pos_hint: {'x': 0, 'top': 1}  # Coloca el logo en la esquina superior izquierda
+
+        Label:
+            id: etiqueta
+            text: "Compras Públicas \n Equipo Médico"
+            font_size: 18
+            #size_hint: 0.8, 0.12
+            canvas.before:
+            #background_color: 25/255, 36/255, 68/255, 1  # Color de fondo (#192444)
+            color: 224/255, 1, 1, 1
+            text_size: self.width, None  # Establece el ancho del área de texto
+            halign: 'center'  # Centrar horizontalmente
+            valign: 'bottom'
+            padding: [0, 0, 0, 0]
+            #spacing: dp(50)
+
+        Spinner:
+            background_normal: ''
+            background_color: 73/255, 116/255, 165/255, 1
+            text: '2023'  # Establece el valor por defecto
+            values: ['2021','2022', '2023']
+            #padding: [0, 0, 0, 0]
+            pos_hint: {'center_x': 0.2, 'top': 0.8}
+            #font_size: 18
+            size_hint: None, None
+            size: 80, 54  # Ajusta el tamaño como desees
+            on_text: root.actualizar_textos(self.text)
+            DropDown:
+                background_normal: ''
+                background_color: 73/255, 116/255, 165/255, 1
+                #background_color: 0.2, 0.8, 0.2, 1  # Color de fondo de la lista desplegable
+                #border: 0, 0, 0, 0  # Elimina el borde de la lista desplegable
+            #on_text: root.grafica_institucion()
+
+
+        #Button:
+        #    text: "2023"
+        #    font_size: 12
+        #    #size_hint: 1, .05
+        #    #background_normal: ''
+        #    #background_color: 0.2, 0.8, 0.2, 1
+        #    #background_color: 0.8, 0.2, 0.2, 1
+        #    #on_press: root.display_info()
+        #    on_press: root.actualizar_textos(2023)
+        #    on_press: root.grafica_institucion()
+#
+        #Button:
+        #    text: "2022"
+        #    font_size: 12
+        #    #size_hint: 1, .1
+        #    #background_normal: ''
+        #    #background_color: 0.2, 0.8, 0.2, 1
+        #    #on_press: root.display_info()
+        #    on_press: root.actualizar_textos(2022)
+        #    on_press: root.grafica_institucion()
+        #    #on_press: app.hola()
+#
+
+
+
+
+    #Label:
+    #    id: etiqueta2
+    #    text: "2023"
+    #    #font_size: 10
+    #    size_hint: 1, 0.1
+    #    canvas.before:
+    #    background_color: 25/255, 36/255, 68/255, 1  # Color de fondo (#192444)
+    #    color: 224/255, 1, 1, 1
+    #    #spacing: dp(50)
+    #    #padding: [0, 0, 0, 30]
+
+
+    #BoxLayout:
+    #    orientation: "horizontal"
+    #    spacing: dp(8)  # Separación horizontal entre los cuadros de texto
+    #    padding: dp(5)
+    #    size_hint: 1, 0.2
+    #    BoxLayout:
+    #        orientation: "vertical"
+    #        Button:
+    #            text: "2023"
+    #            size_hint: 1, .1
+    #            #background_normal: ''
+    #            #background_color: 0.2, 0.8, 0.2, 1
+    #            #background_color: 0.8, 0.2, 0.2, 1
+    #            #on_press: root.display_info()
+    #            on_press: root.actualizar_textos(2023)
+    #            on_press: root.grafica_institucion()
+#
+    #    BoxLayout:
+    #        orientation: "vertical"
+    #        Button:
+    #            text: "2022"
+    #            size_hint: 1, .1
+    #            #background_normal: ''
+    #            #background_color: 0.2, 0.8, 0.2, 1
+    #            #on_press: root.display_info()
+    #            on_press: root.actualizar_textos(2022)
+    #            on_press: root.grafica_institucion()
+    #            #on_press: app.hola()
+#
+    #    BoxLayout:
+    #        orientation: 'vertical'
+    #        Button:
+    #            size_hint: 1, .1
+    #            text: "Inst"
+    #            on_press: root.grafica_institucion()
+    #    BoxLayout:
+    #        orientation: 'vertical'
+    #        Button:
+    #            size_hint: 1, .1
+    #            text: "Empr"
+    #            on_press: root.grafica_empresa()
+    ##BoxLayout:
+    #    #orientation: "horizontal"
+    #    #spacing: dp(2)  # Separación horizontal entre los cuadros de texto
+    #    #size_hint: 1, 0.2
+    #    #BoxLayout:
+    #        #orientation: 'vertical'
+    #        #Button:
+    #            #size_hint: 1, .1
+    #            #text: "Instituciones"
+    #            #on_press: root.grafica_institucion()
+    #    #BoxLayout:
+    #        #orientation: 'vertical'
+    #        #Button:
+    #            #size_hint: 1, .1
+    #            #text: "Empresas"
+    #            #on_press: root.grafica_empresa()
+#
+    #Agrega un espacio para mostrar la gráfica
+
+    #BoxLayout:
+        #size_hint: 1, 1
+        #id: grafica
+
+    #BoxLayout:
+        #size_hint: 1, 1
+        #id: grafica
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: 1, 1
+
+        ScrollView:
+            size_hint: 1, 0.4
+            bar_width: 10
+            scroll_timeout: 150
+            scroll_type: ['bars']
+
+            GridLayout:
+
+                #id: botones
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 10
+                padding: 0
+                # Agrega tus botones aquí, por ejemplo:
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    padding:[10,0,20,0]
+                    spacing: dp(5)  # Separación horizontal entre los cuadros de texto
+                    size_hint_y: None
+                    height: 80  # Ajusta la altura como desees
+                    BoxLayout:
+                        orientation: "vertical"
+                        Button:
+                            id: entrada1
+                            background_normal: ''
+                            background_color: 31/256, 44/256, 86/256, 1
+                            color: 1, 0.647, 0, 1
+                            #text: 'tres'
+                            #size_hint: 1, 0.25
+                            halign: 'center'
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        Button:
+                            id: entrada2
+                            #background_color: 0.8, 0.8, 0.2, 1  # Color amarillo
+                            background_normal: ''
+                            background_color: 31/256, 44/256, 86/256, 1
+                            color: 1, 0.647, 0, 1
+                            #text: 'cuatro'
+                            #size_hint: 1, 0.25
+                            halign: 'center'
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    padding:[10,0,20,0]
+                    spacing: dp(5)  # Separación horizontal entre los cuadros de texto
+                    size_hint_y: None
+                    height: 80  # Ajusta la altura como desees
+                    BoxLayout:
+                        orientation: "vertical"
+                        Button:
+                            id: entrada3
+                            #background_color: 0.2, 0.8, 0.2, 1  # Color verde
+                            background_normal: ''
+                            background_color: 31/256, 44/256, 86/256, 1
+                            color: 1, 0.647, 0, 1
+                            #text: "uno"
+                            #size_hint: 1, 0.25
+                            halign: 'center'
+
+                    BoxLayout:
+                        orientation: "vertical"
+                        Button:
+                            id: entrada4
+                            #background_color: 0.8, 0.2, 0.2, 1  # Color rojo
+                            background_normal: ''
+                            background_color: 31/256, 44/256, 86/256, 1
+                            color: 1, 0.647, 0, 1
+                            #text: 'dos'
+                            #size_hint: 1, 0.25
+                            halign: 'center'
+
+
+                BoxLayout:
+                    #size_hint: 1, 1
+                    padding: [0,10,20,0]
+                    id: grafica
+                    size_hint_y: None
+                    height: 360  # Ajusta la altura como desees
+
+                BoxLayout:
+                    #size_hint: 1, 1
+                    padding: [10,20,20,0]
+                    id: grafica2
+                    size_hint_y: None
+                    height: 360  # Ajusta la altura como desees
+
+
+
+
+                BoxLayout:
+                    canvas.before:
+		                Color:
+			                rgba: (31/256, 44/256, 86/256, 1)
+                        Rectangle:
+                            pos: self.x +10, self.y   # Ajusta los márgenes izquierdo y superior
+                            size: self.width - 30, self.height # Ajusta el ancho y alto descontando los márgenes
+
+
+
+
+                    #orientation: 'horizontal'
+                    #halign: 'left'
+
+                    padding: [30,10,10,0]
+                    margin:0
+                    id: tabla_contratos
+                    #cols: 3
+                    #spacing: 50
+                    size_hint_y: None
+                    #size_pos:0,0
+                    height: self.minimum_height  # Asegura que la altura se ajuste automáticamente
+                    #height: 450  # Ajusta la altura como desees
+
+                BoxLayout:
+                    padding:[10,0,20,0]
+                    size_hint_y: None
+                    #size_pos:0,0
+                    height: self.minimum_height  # Asegura que la altura se ajuste automáticamente
+
+                    Button:
+                        text: "Periodo Seleccionado"
+                        background_normal: ''
+                        background_color: 31/256, 44/256, 86/256, 1
+                        font_size: 16
+                        #size_hint:0.7,1
+                        size_hint_y: None
+                        height: 50  # Ajusta la altura como desees
+
+                    Button:
+                        id: etiqueta2
+                        background_normal: ''
+                        background_color: 31/256, 44/256, 86/256, 1
+                        font_size: 16
+                        #size_hint:0.3,1
+                        text: "2023"
+                        size_hint_y: None
+                        height: 50  # Ajusta la altura como desees
+
+
+                #Button:
+                    #padding: 0
+                    #id: tabla_contratos
+                    #cols: 3
+                    #spacing: 2
+                    #size_hint_y: None
+                    #size_pos:0,0
+                    #height: self.minimum_height  # Asegura que la altura se ajuste automáticamente
+                    #height: 450  # Ajusta la altura como desees
